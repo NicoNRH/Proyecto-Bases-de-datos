@@ -7,12 +7,12 @@ CREATE TABLE episodios (
 
 );
 
-CREATE TABLE intrumentos_ux(
+CREATE TABLE instrumentos_ux(
     instrumento_id INTEGER NOT NULL,
     nombre_instrumento VARCHAR(20) NOT NULL,
     versionn VARCHAR(10) NOT NULL,
     nombre_episodio VARCHAR(100) NOT NULL,
-    descripcion VARCHAR(1000) NOT NULL,
+    descripcion VARCHAR(1000) NOT NULL, 
     escala_max INTEGER NOT NULL,
     escala_min INTEGER NOT NULL,
 
@@ -186,3 +186,147 @@ CREATE TABLE registros_auditoria (
 
     CONSTRAINT pk_registros_auditoria PRIMARY KEY (auditoria_id)
 );
+
+INSERT INTO intrumentos_ux (
+    instrumento_id,
+    nombre_instrumento,
+    versionn,
+    nombre_episodio,
+    descripcion,
+    escala_max,
+    escala_min
+)
+VALUES (
+    1,
+    'BANGS',
+    '1.0',
+    'Todos',
+    'Basic Needs in Games Scale. Mide satisfaccion y frustracion de necesidades psicologicas basicas al jugar Chocolate Doom. Escala 1=Totalmente en desacuerdo, 7=Totalmente de acuerdo.',
+    7,
+    1
+);
+
+INSERT INTO items_ux (item_id, numero_item, texto_item, dimension, puntaje_invertido, instrumentos_uxinstrumento_id)
+VALUES (bangs_1, 1,
+    'Pude tomar decisiones sobre como jugar Chocolate Doom.',
+    'Autonomy Satisfaction',
+    FALSE,
+    1);
+ 
+INSERT INTO items_ux (item_id, numero_item, texto_item, dimension, puntaje_invertido, instrumentos_uxinstrumento_id)
+VALUES (2, 2,
+    'Pude jugar Chocolate Doom a mi manera.',
+    'Autonomy Satisfaction',
+    FALSE,
+    1);
+ 
+INSERT INTO items_ux (item_id, numero_item, texto_item, dimension, puntaje_invertido, instrumentos_uxinstrumento_id)
+VALUES (3, 3,
+    'Pude dirigir mi propia experiencia de juego en Chocolate Doom.',
+    'Autonomy Satisfaction',
+    FALSE,
+    1);
+INSERT INTO items_ux (item_id, numero_item, texto_item, dimension, puntaje_invertido, instrumentos_uxinstrumento_id)
+VALUES (4, 4,
+    'Me senti forzado a realizar ciertas acciones en Chocolate Doom.',
+    'Autonomy Frustration',
+    TRUE,
+    1);
+ 
+INSERT INTO items_ux (item_id, numero_item, texto_item, dimension, puntaje_invertido, instrumentos_uxinstrumento_id)
+VALUES (5, 5,
+    'Muchas acciones en Chocolate Doom eran aburridas.',
+    'Autonomy Frustration',
+    TRUE,
+    1);
+ 
+INSERT INTO items_ux (item_id, numero_item, texto_item, dimension, puntaje_invertido, instrumentos_uxinstrumento_id)
+VALUES (6, 6,
+    'Con frecuencia deseaba poder hacer algo diferente dentro de Chocolate Doom.',
+    'Autonomy Frustration',
+    TRUE,
+    1);
+
+INSERT INTO items_ux (item_id, numero_item, texto_item, dimension, puntaje_invertido, instrumentos_uxinstrumento_id)
+VALUES (7, 7,
+    'Senti que estaba mejorando jugando Chocolate Doom.',
+    'Competence Satisfaction',
+    FALSE,
+    1);
+ 
+INSERT INTO items_ux (item_id, numero_item, texto_item, dimension, puntaje_invertido, instrumentos_uxinstrumento_id)
+VALUES (8, 8,
+    'Senti que progrese mientras jugaba Chocolate Doom.',
+    'Competence Satisfaction',
+    FALSE,
+    1);
+ 
+INSERT INTO items_ux (item_id, numero_item, texto_item, dimension, puntaje_invertido, instrumentos_uxinstrumento_id)
+VALUES (9, 9,
+    'Senti un sentido de logro mientras jugaba Chocolate Doom.',
+    'Competence Satisfaction',
+    FALSE,
+    1);
+
+INSERT INTO items_ux (item_id, numero_item, texto_item, dimension, puntaje_invertido, instrumentos_uxinstrumento_id)
+VALUES (10, 10,
+    'Con frecuencia senti que me faltaban las habilidades necesarias para Chocolate Doom.',
+    'Competence Frustration',
+    TRUE,
+    1);
+ 
+INSERT INTO items_ux (item_id, numero_item, texto_item, dimension, puntaje_invertido, instrumentos_uxinstrumento_id)
+VALUES (11, 11,
+    'Segui fallando en lograr lo que queria mientras jugaba Chocolate Doom.',
+    'Competence Frustration',
+    TRUE,
+    1);
+ 
+INSERT INTO items_ux (item_id, numero_item, texto_item, dimension, puntaje_invertido, instrumentos_uxinstrumento_id)
+VALUES (12, 12,
+    'Me senti decepcionado con mi desempeno en Chocolate Doom.',
+    'Competence Frustration',
+    TRUE,
+    1);
+
+INSERT INTO items_ux (item_id, numero_item, texto_item, dimension, puntaje_invertido, instrumentos_uxinstrumento_id)
+VALUES (13, 13,
+    'Senti que forme relaciones con otros jugadores y/o personajes en Chocolate Doom.',
+    'Relatedness Satisfaction',
+    FALSE,
+    1);
+ 
+INSERT INTO items_ux (item_id, numero_item, texto_item, dimension, puntaje_invertido, instrumentos_uxinstrumento_id)
+VALUES (14, 14,
+    'Al jugar Chocolate Doom, senti una conexion con otros, virtuales o reales.',
+    'Relatedness Satisfaction',
+    FALSE,
+    1);
+ 
+INSERT INTO items_ux (item_id, numero_item, texto_item, dimension, puntaje_invertido, instrumentos_uxinstrumento_id)
+VALUES (15, 15,
+    'Senti que otros jugadores y/o personajes en Chocolate Doom se preocupaban por mi.',
+    'Relatedness Satisfaction',
+    FALSE,
+    1);
+
+INSERT INTO items_ux (item_id, numero_item, texto_item, dimension, puntaje_invertido, instrumentos_uxinstrumento_id)
+VALUES (16, 16,
+    'Las interacciones con otros jugadores y/o personajes en Chocolate Doom me parecieron toxicas.',
+    'Relatedness Frustration',
+    TRUE,
+    1);
+ 
+INSERT INTO items_ux (item_id, numero_item, texto_item, dimension, puntaje_invertido, instrumentos_uxinstrumento_id)
+VALUES (17, 17,
+    'La comunidad o el mundo virtual en Chocolate Doom me hizo sentir no bienvenido.',
+    'Relatedness Frustration',
+    TRUE,
+    1);
+ 
+INSERT INTO items_ux (item_id, numero_item, texto_item, dimension, puntaje_invertido, instrumentos_uxinstrumento_id)
+VALUES (18, 18,
+    'Los demas en Chocolate Doom fueron hostiles hacia mi.',
+    'Relatedness Frustration',
+    TRUE,
+    1);
