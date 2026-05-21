@@ -6,11 +6,9 @@ log_folder="C:/LogsTelemetria/"
 log_file=""
 
 staging_columns = [
-    'raw_episodio', 'raw_mapa', 'raw_sector', 'raw_jugador', 'raw_sesion',
-    'raw_tic', 'raw_numero_tic', 'raw_timestamp_ms', 'raw_pos_x', 'raw_pos_y',
+    'raw_episodio', 'raw_mapa', 'raw_sector', 'raw_jugador', 'raw_sesion', 'raw_numero_tic', 'raw_timestamp_ms', 'raw_pos_x', 'raw_pos_y',
     'raw_pos_z', 'raw_angulo_vision', 'raw_momentum_dx', 'raw_momentum_dy',
-    'raw_velocidad', 'raw_salud', 'raw_armadura', 'raw_municion_balas',
-    'raw_municion_escopeta', 'raw_municion_cohetes', 'raw_municion_celulas'
+    'raw_velocidad', 'raw_salud', 'raw_armadura', 'raw_municion_balas'
 ]
 
 current_episode = ""
