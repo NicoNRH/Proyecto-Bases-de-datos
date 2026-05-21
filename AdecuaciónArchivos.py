@@ -24,7 +24,6 @@ for log_file in archivos:
             line = line.strip()
             if not line:
                 continue
-            # Detectar la cabecera dinámica
             print(line)
             if line.startswith("When:"):
                 print(line)
@@ -38,15 +37,10 @@ for log_file in archivos:
                     
                 print(f"[Línea {line_num}] Cambio de nivel detectado -> Episodio: {current_episode}, Mapa: {current_map}")
                 continue
-            # Saltar la fila de nombres de columnas
             if line.startswith("timestamp"):
                 continue
-            # Procesar filas de datos
-            # Separar por tabuladores o múltiples espacios
             parts = re.split(r'\t+|\s{2,}', line)
             if len(parts) >= 12:
-                # Diccionario temporal para construir la fila
-                # Estructura del log: timestamp, tic, x, y, z, angle, momx, momy, shield, health, ammo, sector_id
                 row_data = {col: '' for col in staging_columns}
                 row_data['raw_episodio'] = current_episode
                 row_data['raw_mapa'] = current_map
@@ -63,7 +57,6 @@ for log_file in archivos:
                 row_data['raw_municion_balas'] = parts[10]
                 row_data['raw_sector'] = parts[11] # ej. (0,0)
                 
-                # Escribir la fila en el CSV
                 writer.writerow([row_data[col] for col in staging_columns])
 print("Archivos CSV generados exitosamente.")
         
