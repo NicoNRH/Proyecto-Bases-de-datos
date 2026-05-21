@@ -149,24 +149,15 @@ CREATE TABLE eventos_telemetria (
     salud                   INTEGER  NOT NULL,
     armadura                INTEGER  NOT NULL,
     municion_balas          INTEGER  NOT NULL,
-    episodiosepisodio_id    INTEGER  NOT NULL,
-    mapasmapa_id            INTEGER  NOT NULL,
     sectoressector_id       INTEGER  NOT NULL,
     jugadoresjugador_id     INTEGER  NOT NULL,
-    sesiones_juegosesion_id INTEGER  NOT NULL,
     tictic_id               INTEGER  NOT NULL,
 
     CONSTRAINT pk_eventos_telemetria PRIMARY KEY (evento_id),
-    CONSTRAINT fk_eventos_episodios FOREIGN KEY (episodiosepisodio_id)
-        REFERENCES episodios (episodio_id),
-    CONSTRAINT fk_eventos_mapas FOREIGN KEY (mapasmapa_id)
-        REFERENCES mapas (mapa_id),
     CONSTRAINT fk_eventos_sectores FOREIGN KEY (sectoressector_id)
         REFERENCES sectores (sector_id),
     CONSTRAINT fk_eventos_jugadores FOREIGN KEY (jugadoresjugador_id)
         REFERENCES jugadores (jugador_id),
-    CONSTRAINT fk_eventos_sesiones FOREIGN KEY (sesiones_juegosesion_id)
-        REFERENCES sesiones_juego (sesion_id),
     CONSTRAINT fk_eventos_tic FOREIGN KEY (tictic_id)
         REFERENCES tic (tic_id)
 );
