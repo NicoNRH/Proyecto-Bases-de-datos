@@ -13,9 +13,12 @@ INSERT INTO usuarios (user_id, nombre_usuario, email, edad, genero, nivel_experi
 (4, 'andres123', '2026-05-20 20:05:00', 4);
 
 INSERT INTO episodios (episodio_id, numero_episodio, nombre_episodio) VALUES
-(1, 1, 'Knee-Deep in the Dead'),
-(2, 2, 'The Shores of Hell'),
-(3, 3, 'Inferno');
+(1, 1, 'THE CITY OF THE DAMNED'),
+(2, 2, 'HELL''S MAW'),
+(3, 3, 'THE DOME OF D''SPARIL'),
+(4, 4, 'THE OSSUARY'),
+(5, 5, 'THE STAGNANT DEMESNE'),
+(6, 6, 'UNNAMED EPISODE');
 
 INSERT INTO mapas (mapa_id, codigo_mapa, nombre_mapa, ancho_unidades, alto_unidades, episodiosepisodio_id) VALUES
 (1, 'E1M1', 'Hangar',           3200, 3200, 1),
