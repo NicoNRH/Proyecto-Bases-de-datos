@@ -171,7 +171,7 @@ CREATE TABLE eventos_telemetria (
         REFERENCES tic (tic_id)
 );
 
-INSERT INTO intrumentos_ux (
+INSERT INTO instrumentos_ux (
     instrumento_id,
     nombre_instrumento,
     versionn,
@@ -191,7 +191,7 @@ VALUES (
 );
 
 INSERT INTO items_ux (item_id, numero_item, texto_item, dimension, puntaje_invertido, instrumentos_uxinstrumento_id)
-VALUES (bangs_1, 1,
+VALUES (1, 1,
     'Pude tomar decisiones sobre como jugar Chocolate Doom.',
     'Autonomy Satisfaction',
     FALSE,
