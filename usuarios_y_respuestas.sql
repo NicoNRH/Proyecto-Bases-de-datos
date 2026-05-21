@@ -1,16 +1,13 @@
--- 4 jugadores que respondieron la encuesta BANGS
+-- 3 jugadores que respondieron la encuesta BANGS
 
 INSERT INTO usuarios (user_id, nombre_usuario, email, edad, genero, nivel_experiencia, creado_en, esta_activo, firma_consentimiento_en, consentimiento) VALUES
 (1, 'Davidg',    'davidg@uni.edu',    18, 'Masculino', 'Avanzado',     '2026-05-20 20:00:00', TRUE, '2026-05-20 20:01:00', 'Acepto participar en el estudio de telemetria de Chocolate Doom.'),
 (2, 'gaby.12',   'gaby12@uni.edu',    20, 'Femenino',  'Principiante', '2026-05-20 20:00:00', TRUE, '2026-05-20 20:01:00', 'Acepto participar en el estudio de telemetria de Chocolate Doom.'),
 (3, 'Nicolas',   'nicolas@uni.edu',   19, 'Masculino', 'Avanzado',     '2026-05-20 20:00:00', TRUE, '2026-05-20 20:01:00', 'Acepto participar en el estudio de telemetria de Chocolate Doom.'),
-(4, 'andres123', 'andres123@uni.edu', 18, 'Masculino', 'Intermedio',   '2026-05-20 20:00:00', TRUE, '2026-05-20 20:01:00', 'Acepto participar en el estudio de telemetria de Chocolate Doom.');
 
- INSERT INTO jugadores (jugador_id, alias, creado_en, usuariosuser_id) VALUES
 (1, 'Davidg',    '2026-05-20 20:05:00', 1),
 (2, 'gaby.12',   '2026-05-20 20:05:00', 2),
 (3, 'Nicolas',   '2026-05-20 20:05:00', 3),
-(4, 'andres123', '2026-05-20 20:05:00', 4);
 
 INSERT INTO episodios (episodio_id, numero_episodio, nombre_episodio) VALUES
 (1, 1, 'THE CITY OF THE DAMNED'),
@@ -74,7 +71,6 @@ INSERT INTO sesiones_juego (sesion_id, modo_juego, dificultad, iniciado_en, term
 (1, 'single', 'medium', '2026-05-20 20:00:00', '2026-05-20 20:30:00', 1),
 (2, 'single', 'medium', '2026-05-20 20:35:00', '2026-05-20 21:05:00', 2),
 (3, 'single', 'medium', '2026-05-20 21:10:00', '2026-05-20 21:40:00', 3),
-(4, 'single', 'medium', '2026-05-20 21:45:00', '2026-05-20 22:15:00', 4);
 
 --Davidg - sesion 3
 INSERT INTO respuestas_ux (respuesta_id, respondido_en, puntaje_total, usuariosuser_id, sesiones_juegosesion_id, instrumentos_uxinstrumento_id, items_uxitem_id) VALUES
@@ -139,26 +135,7 @@ INSERT INTO respuestas_ux (respuesta_id, respondido_en, puntaje_total, usuariosu
 (53, '2026-05-20 23:46:05', 1, 3, 1, 1, 17),
 (54, '2026-05-20 23:46:05', 1, 3, 1, 1, 18);
  
--- andres123 - sesion 4
-INSERT INTO respuestas_ux (respuesta_id, respondido_en, puntaje_total, usuariosuser_id, sesiones_juegosesion_id, instrumentos_uxinstrumento_id, items_uxitem_id) VALUES
-(55, '2026-05-20 23:46:59', 7, 4, 4, 1, 1),
-(56, '2026-05-20 23:46:59', 3, 4, 4, 1, 2),
-(57, '2026-05-20 23:46:59', 3, 4, 4, 1, 3),
-(58, '2026-05-20 23:46:59', 5, 4, 4, 1, 4),
-(59, '2026-05-20 23:46:59', 1, 4, 4, 1, 5),
-(60, '2026-05-20 23:46:59', 3, 4, 4, 1, 6),
-(61, '2026-05-20 23:46:59', 5, 4, 4, 1, 7),
-(62, '2026-05-20 23:46:59', 4, 4, 4, 1, 8),
-(63, '2026-05-20 23:46:59', 6, 4, 4, 1, 9),
-(64, '2026-05-20 23:46:59', 7, 4, 4, 1, 10),
-(65, '2026-05-20 23:46:59', 5, 4, 4, 1, 11),
-(66, '2026-05-20 23:46:59', 4, 4, 4, 1, 12),
-(67, '2026-05-20 23:46:59', 2, 4, 4, 1, 13),
-(68, '2026-05-20 23:46:59', 2, 4, 4, 1, 14),
-(69, '2026-05-20 23:46:59', 4, 4, 4, 1, 15),
-(70, '2026-05-20 23:46:59', 4, 4, 4, 1, 16),
-(71, '2026-05-20 23:46:59', 3, 4, 4, 1, 17),
-(72, '2026-05-20 23:46:59', 7, 4, 4, 1, 18);
+
 
 
 
