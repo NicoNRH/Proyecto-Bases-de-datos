@@ -143,16 +143,12 @@ CREATE TABLE eventos_telemetria (
     momentum_dx             FLOAT    NOT NULL,
     pos_x                   FLOAT    NOT NULL,
     pos_y                   FLOAT    NOT NULL,
-    pos_z                   FLOAT    NOT NULL,
     angulo_vision           FLOAT    NOT NULL,
     momentum_dy             FLOAT    NOT NULL,
     velocidad_momentum      FLOAT    NOT NULL,
     salud                   INTEGER  NOT NULL,
     armadura                INTEGER  NOT NULL,
     municion_balas          INTEGER  NOT NULL,
-    municion_escopeta       INTEGER  NOT NULL,
-    municion_cohetes        INTEGER  NOT NULL,
-    municion_celulas        INTEGER  NOT NULL,
     episodiosepisodio_id    INTEGER  NOT NULL,
     mapasmapa_id            INTEGER  NOT NULL,
     sectoressector_id       INTEGER  NOT NULL,
@@ -173,18 +169,6 @@ CREATE TABLE eventos_telemetria (
         REFERENCES sesiones_juego (sesion_id),
     CONSTRAINT fk_eventos_tic FOREIGN KEY (tictic_id)
         REFERENCES tic (tic_id)
-);
-
-
-CREATE TABLE registros_auditoria (
-    auditoria_id  INTEGER        NOT NULL,
-    accedido_por  VARCHAR(50)    NOT NULL,
-    nombre_tabla  VARCHAR(50)    NOT NULL,
-    accion        VARCHAR(10)    NOT NULL,
-    accedido_en   TIMESTAMP      NOT NULL,
-    detalles      VARCHAR(1000)  NOT NULL,
-
-    CONSTRAINT pk_registros_auditoria PRIMARY KEY (auditoria_id)
 );
 
 INSERT INTO intrumentos_ux (
