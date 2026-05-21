@@ -1,0 +1,22 @@
+ CREATE TABLE staging_telemetria (
+    raw_episodio         TEXT,
+    raw_mapa             TEXT,
+    raw_sector           TEXT,
+    raw_jugador          TEXT,
+    raw_sesion           TEXT,
+    raw_numero_tic       TEXT,
+    raw_timestamp_ms     TEXT,
+    raw_pos_x            TEXT,
+    raw_pos_y            TEXT,
+    raw_pos_z            TEXT,
+    raw_angulo_vision    TEXT,
+    raw_momentum_dx      TEXT,
+    raw_momentum_dy      TEXT,
+    raw_velocidad        TEXT,
+    raw_salud            TEXT,
+    raw_armadura         TEXT,
+    raw_municion_balas   TEXT,
+    cargado_en           TIMESTAMP DEFAULT NOW(),
+    error_flag           BOOLEAN   DEFAULT FALSE,
+    error_detalle        TEXT
+);
