@@ -21,7 +21,6 @@ INSERT INTO episodios (episodio_id, numero_episodio, nombre_episodio) VALUES
 (6, 6, 'UNNAMED EPISODE');
 
 INSERT INTO mapas (mapa_id, codigo_mapa, nombre_mapa, ancho_unidades, alto_unidades, episodiosepisodio_id) VALUES
--- EPISODE 1: THE CITY OF THE DAMNED
 (1,  'E1M1', 'THE DOCKS', 0.0, 0.0, 1),
 (2,  'E1M2', 'THE DUNGEONS', 0.0, 0.0, 1),
 (3,  'E1M3', 'THE GATEHOUSE', 0.0, 0.0, 1),
@@ -31,8 +30,6 @@ INSERT INTO mapas (mapa_id, codigo_mapa, nombre_mapa, ancho_unidades, alto_unida
 (7,  'E1M7', 'THE CRYPTS', 0.0, 0.0, 1),
 (8,  'E1M8', 'HELL''S MAW', 0.0, 0.0, 1),
 (9,  'E1M9', 'THE GRAVEYARD', 0.0, 0.0, 1),
-
--- EPISODE 2: HELL'S MAW
 (10, 'E2M1', 'THE CRATER', 0.0, 0.0, 2),
 (11, 'E2M2', 'THE LAVA PITS', 0.0, 0.0, 2),
 (12, 'E2M3', 'THE RIVER OF FIRE', 0.0, 0.0, 2),
@@ -42,8 +39,6 @@ INSERT INTO mapas (mapa_id, codigo_mapa, nombre_mapa, ancho_unidades, alto_unida
 (16, 'E2M7', 'THE GREAT HALL', 0.0, 0.0, 2),
 (17, 'E2M8', 'THE PORTALS OF CHAOS', 0.0, 0.0, 2),
 (18, 'E2M9', 'THE GLACIER', 0.0, 0.0, 2),
-
--- EPISODE 3: THE DOME OF D'SPARIL
 (19, 'E3M1', 'THE STOREHOUSE', 0.0, 0.0, 3),
 (20, 'E3M2', 'THE CESSPOOL', 0.0, 0.0, 3),
 (21, 'E3M3', 'THE CONFLUENCE', 0.0, 0.0, 3),
@@ -53,8 +48,6 @@ INSERT INTO mapas (mapa_id, codigo_mapa, nombre_mapa, ancho_unidades, alto_unida
 (25, 'E3M7', 'THE CHASM', 0.0, 0.0, 3),
 (26, 'E3M8', 'D''SPARIL''S KEEP', 0.0, 0.0, 3),
 (27, 'E3M9', 'THE AQUIFER', 0.0, 0.0, 3),
-
--- EPISODE 4: THE OSSUARY
 (28, 'E4M1', 'CATAFALQUE', 0.0, 0.0, 4),
 (29, 'E4M2', 'BLOCKHOUSE', 0.0, 0.0, 4),
 (30, 'E4M3', 'AMBULATORY', 0.0, 0.0, 4),
@@ -64,8 +57,6 @@ INSERT INTO mapas (mapa_id, codigo_mapa, nombre_mapa, ancho_unidades, alto_unida
 (34, 'E4M7', 'RAMPARTS OF PERDITION', 0.0, 0.0, 4),
 (35, 'E4M8', 'SHATTERED BRIDGE', 0.0, 0.0, 4),
 (36, 'E4M9', 'MAUSOLEUM', 0.0, 0.0, 4),
-
--- EPISODE 5: THE STAGNANT DEMESNE
 (37, 'E5M1', 'OCHRE CLIFFS', 0.0, 0.0, 5),
 (38, 'E5M2', 'RAPIDS', 0.0, 0.0, 5),
 (39, 'E5M3', 'QUAY', 0.0, 0.0, 5),
@@ -75,8 +66,6 @@ INSERT INTO mapas (mapa_id, codigo_mapa, nombre_mapa, ancho_unidades, alto_unida
 (43, 'E5M7', 'FOETID MANSE', 0.0, 0.0, 5),
 (44, 'E5M8', 'FIELD OF JUDGEMENT', 0.0, 0.0, 5),
 (45, 'E5M9', 'SKEIN OF D''SPARIL', 0.0, 0.0, 5),
-
--- EPISODE 6: unnamed
 (46, 'E6M1', 'UNNAMED MAP 1', 0.0, 0.0, 6),
 (47, 'E6M2', 'UNNAMED MAP 2', 0.0, 0.0, 6),
 (48, 'E6M3', 'UNNAMED MAP 3', 0.0, 0.0, 6);
