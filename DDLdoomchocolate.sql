@@ -11,7 +11,6 @@ CREATE TABLE instrumentos_ux(
     instrumento_id INTEGER NOT NULL,
     nombre_instrumento VARCHAR(20) NOT NULL,
     versionn VARCHAR(10) NOT NULL,
-    nombre_episodio VARCHAR(100) NOT NULL,
     descripcion VARCHAR(1000) NOT NULL, 
     escala_max INTEGER NOT NULL,
     escala_min INTEGER NOT NULL,
