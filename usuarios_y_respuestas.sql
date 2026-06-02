@@ -14,10 +14,7 @@ INSERT INTO usuarios (user_id, nombre_usuario, email, edad, genero, nivel_experi
 (5, 'Juan',     'juan@uni.edu',     22, 'Masculino', 'Principiante', '2026-05-20 20:00:00', TRUE, '2026-05-20 20:01:00', 'Acepto participar en el estudio de telemetria de Chocolate Doom.'),
 (6, 'Lindsay',  'lindsay@uni.edu',  20, 'Femenino',  'Intermedio',   '2026-05-20 20:00:00', TRUE, '2026-05-20 20:01:00', 'Acepto participar en el estudio de telemetria de Chocolate Doom.');
 
--- -------------------------------------------------------------
--- JUGADORES (6) — 1:1 con usuarios
--- CORRECCIÓN: este bloque faltaba la cabecera INSERT en el archivo original
--- -------------------------------------------------------------
+
 INSERT INTO jugadores (jugador_id, alias, creado_en, usuariosuser_id) VALUES
 (1, 'Davidg',  '2026-05-20 20:05:00', 1),
 (2, 'gaby.12', '2026-05-20 20:05:00', 2),
@@ -37,12 +34,7 @@ INSERT INTO episodios (episodio_id, numero_episodio, nombre_episodio) VALUES
 (5, 5, 'THE STAGNANT DEMESNE'),
 (6, 6, 'UNNAMED EPISODE');
 
--- -------------------------------------------------------------
--- MAPAS (48)
--- NOTA: ancho_unidades y alto_unidades en 0.0 porque las
--- dimensiones exactas de Heretic no estan disponibles en la
--- telemetria actual. Se pueden actualizar con datos reales.
--- -------------------------------------------------------------
+
 INSERT INTO mapas (mapa_id, codigo_mapa, nombre_mapa, ancho_unidades, alto_unidades, episodiosepisodio_id) VALUES
 (1,  'E1M1', 'THE DOCKS',              0.0, 0.0, 1),
 (2,  'E1M2', 'THE DUNGEONS',           0.0, 0.0, 1),
@@ -93,12 +85,8 @@ INSERT INTO mapas (mapa_id, codigo_mapa, nombre_mapa, ancho_unidades, alto_unida
 (47, 'E6M2', 'UNNAMED MAP 2',          0.0, 0.0, 6),
 (48, 'E6M3', 'UNNAMED MAP 3',          0.0, 0.0, 6);
 
--- -------------------------------------------------------------
+
 -- SESIONES DE JUEGO (6)
--- CORRECCIÓN: el archivo original terminaba con coma en lugar
--- de punto y coma, causando error de sintaxis en PostgreSQL.
--- Se añaden sesiones 4, 5, 6 para cubrir los nuevos jugadores.
--- -------------------------------------------------------------
 INSERT INTO sesiones_juego (sesion_id, modo_juego, dificultad, iniciado_en, terminado_en, mapasmapa_id) VALUES
 (1, 'single', 'medium', '2026-05-20 20:00:00', '2026-05-20 20:30:00', 1),
 (2, 'single', 'medium', '2026-05-20 20:35:00', '2026-05-20 21:05:00', 2),
@@ -107,13 +95,9 @@ INSERT INTO sesiones_juego (sesion_id, modo_juego, dificultad, iniciado_en, term
 (5, 'single', 'easy',   '2026-05-21 19:00:00', '2026-05-21 19:25:00', 19),
 (6, 'single', 'medium', '2026-05-21 20:00:00', '2026-05-21 20:45:00', 28);
 
--- -------------------------------------------------------------
--- RESPUESTAS UX — BANGS (instrumento_id = 1, items 1-18)
--- Fuente real (CSV): Davidg sesion 3, gaby.12 sesion 3, Nicolas sesion 1
--- Sinteticas coherentes: Juanes sesion 4, Juan sesion 5, Lindsay sesion 6
--- -------------------------------------------------------------
 
--- Davidg — sesion 3 (respuestas reales del CSV)
+-- RESPUESTAS UX — BANGS 
+-- Davidg — sesion 3 
 INSERT INTO respuestas_ux (respuesta_id, respondido_en, puntaje_total, usuariosuser_id, sesiones_juegosesion_id, instrumentos_uxinstrumento_id, items_uxitem_id) VALUES
 (1,  '2026-05-20 23:41:32', 7, 1, 3, 1, 1),
 (2,  '2026-05-20 23:41:32', 6, 1, 3, 1, 2),
@@ -134,7 +118,7 @@ INSERT INTO respuestas_ux (respuesta_id, respondido_en, puntaje_total, usuariosu
 (17, '2026-05-20 23:41:32', 7, 1, 3, 1, 17),
 (18, '2026-05-20 23:41:32', 6, 1, 3, 1, 18);
 
--- gaby.12 — sesion 3 (respuestas reales del CSV)
+-- gaby.12 — sesion 3
 INSERT INTO respuestas_ux (respuesta_id, respondido_en, puntaje_total, usuariosuser_id, sesiones_juegosesion_id, instrumentos_uxinstrumento_id, items_uxitem_id) VALUES
 (19, '2026-05-20 23:44:29', 6, 2, 3, 1, 1),
 (20, '2026-05-20 23:44:29', 7, 2, 3, 1, 2),
@@ -155,7 +139,7 @@ INSERT INTO respuestas_ux (respuesta_id, respondido_en, puntaje_total, usuariosu
 (35, '2026-05-20 23:44:29', 1, 2, 3, 1, 17),
 (36, '2026-05-20 23:44:29', 1, 2, 3, 1, 18);
 
--- Nicolas — sesion 1 (respuestas reales del CSV)
+-- Nicolas — sesion 1 
 INSERT INTO respuestas_ux (respuesta_id, respondido_en, puntaje_total, usuariosuser_id, sesiones_juegosesion_id, instrumentos_uxinstrumento_id, items_uxitem_id) VALUES
 (37, '2026-05-20 23:46:05', 6, 3, 1, 1, 1),
 (38, '2026-05-20 23:46:05', 5, 3, 1, 1, 2),
@@ -176,7 +160,7 @@ INSERT INTO respuestas_ux (respuesta_id, respondido_en, puntaje_total, usuariosu
 (53, '2026-05-20 23:46:05', 1, 3, 1, 1, 17),
 (54, '2026-05-20 23:46:05', 1, 3, 1, 1, 18);
 
--- Juanes — sesion 4 (sintetico — perfil intermedio, experiencia media)
+-- Juanes — sesion 4 
 INSERT INTO respuestas_ux (respuesta_id, respondido_en, puntaje_total, usuariosuser_id, sesiones_juegosesion_id, instrumentos_uxinstrumento_id, items_uxitem_id) VALUES
 (55, '2026-05-21 19:10:00', 5, 4, 4, 1, 1),
 (56, '2026-05-21 19:10:00', 5, 4, 4, 1, 2),
@@ -197,7 +181,7 @@ INSERT INTO respuestas_ux (respuesta_id, respondido_en, puntaje_total, usuariosu
 (71, '2026-05-21 19:10:00', 2, 4, 4, 1, 17),
 (72, '2026-05-21 19:10:00', 2, 4, 4, 1, 18);
 
--- Juan — sesion 5 (sintetico — principiante, frustracion alta, competencia baja)
+-- Juan — sesion 5 
 INSERT INTO respuestas_ux (respuesta_id, respondido_en, puntaje_total, usuariosuser_id, sesiones_juegosesion_id, instrumentos_uxinstrumento_id, items_uxitem_id) VALUES
 (73, '2026-05-21 20:05:00', 3, 5, 5, 1, 1),
 (74, '2026-05-21 20:05:00', 3, 5, 5, 1, 2),
@@ -218,7 +202,7 @@ INSERT INTO respuestas_ux (respuesta_id, respondido_en, puntaje_total, usuariosu
 (89, '2026-05-21 20:05:00', 1, 5, 5, 1, 17),
 (90, '2026-05-21 20:05:00', 2, 5, 5, 1, 18);
 
--- Lindsay — sesion 6 (sintetico — intermedia, autonomia alta, buena relacion social)
+-- Lindsay — sesion 6 
 INSERT INTO respuestas_ux (respuesta_id, respondido_en, puntaje_total, usuariosuser_id, sesiones_juegosesion_id, instrumentos_uxinstrumento_id, items_uxitem_id) VALUES
 (91,  '2026-05-21 21:15:00', 6, 6, 6, 1, 1),
 (92,  '2026-05-21 21:15:00', 7, 6, 6, 1, 2),
