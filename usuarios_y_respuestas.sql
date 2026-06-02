@@ -5,9 +5,10 @@ INSERT INTO usuarios (user_id, nombre_usuario, email, edad, genero, nivel_experi
 (2, 'gaby.12',   'gaby12@uni.edu',    20, 'Femenino',  'Principiante', '2026-05-20 20:00:00', TRUE, '2026-05-20 20:01:00', 'Acepto participar en el estudio de telemetria de Chocolate Doom.'),
 (3, 'Nicolas',   'nicolas@uni.edu',   19, 'Masculino', 'Avanzado',     '2026-05-20 20:00:00', TRUE, '2026-05-20 20:01:00', 'Acepto participar en el estudio de telemetria de Chocolate Doom.'),
 
-(1, 'Davidg',    '2026-05-20 20:05:00', 1),
-(2, 'gaby.12',   '2026-05-20 20:05:00', 2),
-(3, 'Nicolas',   '2026-05-20 20:05:00', 3),
+INSERT INTO jugadores (jugador_id, alias, creado_en, usuariosuser_id) VALUES
+(1, 'Davidg',  '2026-05-20 20:05:00', 1),
+(2, 'gaby.12', '2026-05-20 20:05:00', 2),
+(3, 'Nicolas', '2026-05-20 20:05:00', 3);
 
 INSERT INTO episodios (episodio_id, numero_episodio, nombre_episodio) VALUES
 (1, 1, 'THE CITY OF THE DAMNED'),
@@ -70,7 +71,7 @@ INSERT INTO mapas (mapa_id, codigo_mapa, nombre_mapa, ancho_unidades, alto_unida
 INSERT INTO sesiones_juego (sesion_id, modo_juego, dificultad, iniciado_en, terminado_en, mapasmapa_id) VALUES
 (1, 'single', 'medium', '2026-05-20 20:00:00', '2026-05-20 20:30:00', 1),
 (2, 'single', 'medium', '2026-05-20 20:35:00', '2026-05-20 21:05:00', 2),
-(3, 'single', 'medium', '2026-05-20 21:10:00', '2026-05-20 21:40:00', 3),
+(3, 'single', 'medium', '2026-05-20 21:10:00', '2026-05-20 21:40:00', 3);
 
 --Davidg - sesion 3
 INSERT INTO respuestas_ux (respuesta_id, respondido_en, puntaje_total, usuariosuser_id, sesiones_juegosesion_id, instrumentos_uxinstrumento_id, items_uxitem_id) VALUES
