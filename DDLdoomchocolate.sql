@@ -162,6 +162,17 @@ CREATE TABLE eventos_telemetria (
         REFERENCES tic (tic_id)
 );
 
+CREATE TABLE registros_auditoria (
+    auditoria_id   INTEGER       NOT NULL,
+    accedido_por   VARCHAR(100)  NOT NULL,
+    nombre_tabla   VARCHAR(100)  NOT NULL,
+    accion         VARCHAR(50)   NOT NULL,
+    accedido_en    TIMESTAMP     NOT NULL DEFAULT NOW(),
+    detalles       VARCHAR(1000),
+
+    CONSTRAINT pk_registros_auditoria PRIMARY KEY (auditoria_id)
+);
+
 INSERT INTO instrumentos_ux (
     instrumento_id,
     nombre_instrumento,
