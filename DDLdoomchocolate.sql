@@ -82,7 +82,7 @@ CREATE TABLE sectores (
     bbox_x_max   FLOAT        NOT NULL,
     bbox_y_min   FLOAT        NOT NULL,
     bbox_y_max   FLOAT        NOT NULL,
-    mapasmapa_id INTEGER      NOT NULL,
+
 
     CONSTRAINT pk_sectores PRIMARY KEY (sector_id),
     CONSTRAINT fk_sectores_mapas FOREIGN KEY (mapasmapa_id)
@@ -122,7 +122,6 @@ CREATE TABLE respuestas_ux (
     puntaje_total                 FLOAT    NOT NULL,
     usuariosuser_id               INTEGER  NOT NULL,
     sesiones_juegosesion_id       INTEGER  NOT NULL,
-    instrumentos_uxinstrumento_id INTEGER  NOT NULL,
     items_uxitem_id               INTEGER  NOT NULL,
 
     CONSTRAINT pk_respuestas_ux PRIMARY KEY (respuesta_id),
@@ -130,8 +129,6 @@ CREATE TABLE respuestas_ux (
         REFERENCES usuarios (user_id),
     CONSTRAINT fk_respuestas_sesiones FOREIGN KEY (sesiones_juegosesion_id)
         REFERENCES sesiones_juego (sesion_id),
-    CONSTRAINT fk_respuestas_instrumentos FOREIGN KEY (instrumentos_uxinstrumento_id)
-        REFERENCES instrumentos_ux (instrumento_id),
     CONSTRAINT fk_respuestas_items FOREIGN KEY (items_uxitem_id)
         REFERENCES items_ux (item_id)
 );
