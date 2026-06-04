@@ -1,15 +1,11 @@
--- =============================================================
 -- InsertarDatosTelemetria.sql
--- ETL: staging_telemetria → tablas core
--- Ejecutar DESPUÉS de CargueTXTaStagingTelemetria.sql
--- =============================================================
+
 
 BEGIN;
 
--- -------------------------------------------------------------
 -- PASO 1: Validacion — marcar filas con errores
 -- Usa TRIM() en todas las validaciones para manejar espacios
--- -------------------------------------------------------------
+
 UPDATE staging_telemetria
 SET
     error_flag    = TRUE,
@@ -45,9 +41,9 @@ WHERE
     OR raw_pos_x IS NULL OR TRIM(raw_pos_x) !~ '^-?[0-9]+(\.[0-9]+)?$'
     OR raw_pos_y IS NULL OR TRIM(raw_pos_y) !~ '^-?[0-9]+(\.[0-9]+)?$';
 
--- -------------------------------------------------------------
+
 -- PASO 2: Insertar SECTORES nuevos
--- -------------------------------------------------------------
+
 WITH sectores_nuevos AS (
     SELECT
         TRIM(s.raw_sector) AS nombre_sector,
@@ -79,9 +75,9 @@ INSERT INTO sectores (sector_id, nombre_sector, bbox_x_min, bbox_x_max, bbox_y_m
 SELECT sector_id, nombre_sector, bbox_x_min, bbox_x_max, bbox_y_min, bbox_y_max
 FROM numerados;
 
--- -------------------------------------------------------------
+
 -- PASO 3: Insertar TICS nuevos
--- -------------------------------------------------------------
+
 WITH tics_nuevos AS (
     SELECT DISTINCT
         TRIM(s.raw_numero_tic)::INTEGER AS numero_tic,
@@ -107,9 +103,9 @@ INSERT INTO tic (tic_id, numero_tic, timestamp_ms, sesiones_juegosesion_id)
 SELECT tic_id, numero_tic, timestamp_ms, sesion_id
 FROM numerados;
 
--- -------------------------------------------------------------
+
 -- PASO 4: Insertar EVENTOS_TELEMETRIA
--- -------------------------------------------------------------
+
 WITH eventos_limpios AS (
     SELECT
         CASE WHEN TRIM(s.raw_momentum_dx) ~ '^-?[0-9]+(\.[0-9]+)?$'
@@ -167,9 +163,9 @@ SELECT
     municion_cohetes, municion_celulas, sector_id, jugador_id, tic_id
 FROM numerados;
 
--- -------------------------------------------------------------
+
 -- PASO 5: Resumen de carga
--- -------------------------------------------------------------
+
 SELECT
     COUNT(*)                               AS total_staging,
     COUNT(*) FILTER (WHERE error_flag)     AS filas_con_error,
